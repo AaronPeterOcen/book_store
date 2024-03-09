@@ -11,13 +11,13 @@ def index(request):
         "books": books
     })
 
-def book_detail(request, id):
+def book_detail(request, slug):
     # try:
     #     book = Books.objects.get(pk=id)
     # except:
     #     raise Http404()
     # alternative for 404 error
-    book = get_object_or_404(Books, pk=id)
+    book = get_object_or_404(Books, slug=slug)
     return render(request, "book_outlet/book_detail.html", {
         "title": book.title,
         "author": book.author,
