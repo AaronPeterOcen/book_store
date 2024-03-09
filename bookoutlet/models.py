@@ -7,7 +7,7 @@ class Books(models.Model):
     """New Book class"""
     title = models.CharField(max_length=50)
     ratings = models.IntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)]) 
+        validators=[MinValueValidator(1), MaxValueValidator(5)])
     author = models.CharField(null=True, max_length=100)
     is_bestselling = models.BooleanField(default=False)
     
